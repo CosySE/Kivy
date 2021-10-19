@@ -1,0 +1,98 @@
+#:kivy 2.0
+
+WidgetsEjemplos:
+
+<WidgetsEjemplos>:
+    cols: 3
+    Button:
+        text:'Contar'
+        on_press: root.presiona_boton()
+    Label:
+        text: root.mitexto
+        font_size :'100dp'
+        color: 1,.5,1,1
+
+
+<ScrollViewEjemplo@ScrollView>:
+    StackLayoutEjemplo:
+        size_hint: 1, None
+        height: self.minimum_height
+      
+
+<StackLayoutEjemplo>:
+# 'left-right' , 'top-bottom'
+    orientation:'lr-tb'
+    #left,top,right,bottom
+    #padding:'20dp','20dp','20dp','20dp'
+    #spacing: '20dp' , '20dp'     
+
+
+<GridlayoutEjemplo@GridLayout>:
+    rows:2
+    cols:3
+    Button:
+        text:'A'
+        size_hint: .2 , 1
+    BoxLayoutEjemplo:
+    Button:
+        text:'C'
+    Button:
+        text:'E'
+        size_hint: .2 , 1
+    Button:
+        text:'F'
+    Button:
+        text:'D'        
+
+<AnchorLayoutEjempo>:
+    #right,left,center
+    anchor_x: 'center'
+    #bottom,top,center
+    anchor_y:'top'
+    BoxLayout:
+        size_hint:0.2,0.2
+        Button:
+            #size_hint:0.2,0.2
+            text:'hola'
+        Button:
+            #size_hint:0.1,0.1
+            text:'hola2'
+
+<BoxLayoutEjemplo>:#hacemos un llamado a clase definida en el modulo.py
+    orientation:'horizontal'
+    Button:
+        text:'A'
+        #size: "40dp","40dp"
+        size_hint: .5, .7
+         # width:'40dp'
+        # height:'40dp' 
+        #x,center_x,right
+        #y,center_y,top
+        pos_hint:{'center_x':0.5}  
+    BoxLayout:
+        orientation:'vertical'
+        spacing:'10dp'
+        Button:
+            text:'1'   
+        Button:
+            text:'2'  
+        Button:
+            text:'3'  
+        Button:
+            text:'4'   
+    
+    Button:
+        text:'C'
+
+<WidgetPrincipal>:
+    Button:
+        text: "Hola"
+        size: "100dp", "80dp" #esto es en pixeles pero los pixeles pueden ser complicados en
+        #algubos dispositivos entonces es mejor usar dp
+        pos: "200dp","100dp"
+    Label:
+        text: "Hola2"
+        size: "100dp", "80dp" #esto es en pixeles pero los pixeles pueden ser complicados en
+        #algubos dispositivos entonces es mejor usar dp
+        pos: "300dp","200dp"
+        color: 0,5,5,1
