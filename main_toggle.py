@@ -12,7 +12,7 @@ from kivy.properties import StringProperty
 
 class WidgetsEjemplos(GridLayout):
     contador = 1
-    mitexto = StringProperty('1                         ')
+    mitexto = StringProperty('1')
     def presiona_boton(self):
         self.contador = self.contador + 1
         self.mitexto= str(self.contador)
@@ -20,6 +20,10 @@ class WidgetsEjemplos(GridLayout):
 
     def toggleboton(self,widget):
         print('me presionaste' + widget.state)
+        if widget.state == 'normal':
+            widget.text = 'OFF'
+        else:
+            widget.text = 'ON'
 
 class StackLayoutEjemplo(StackLayout):
     def __init__(self, **kwargs):
