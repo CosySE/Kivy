@@ -1,0 +1,57 @@
+#:kivy 2.0
+Navegar:
+    Primera:
+    Segunda:
+    Tercera:
+
+<Primera>:
+    name: '1'
+    BoxLayout:
+        orientation:'vertical'
+        size: root.width ,root.height
+        Label:
+            text: 'Primera Pantalla'
+            font_size: 30
+        Button:
+            text:'pantalla 2'
+            font_size:30
+            on_release: 
+                app.root.current = '2'
+                root.manager.transition.direction = 'left'
+        Button:
+            text:'pantalla 3'
+            font_size:30
+            on_release: 
+                app.root.current = '3'
+                root.manager.transition.direction = 'left'
+
+<Segunda>:
+    name: '2'
+    BoxLayout:
+        orientation:'vertical'
+        size: root.width ,root.height
+        Label:
+            text: 'Segunda Pantalla'
+            font_size: 30
+        Button:
+            text:'pantalla 1'
+            font_size:30
+            on_release: 
+                app.root.current = '1'
+                root.manager.transition.direction = 'right'
+
+
+<Tercera>:
+    name: '3'
+    BoxLayout:
+        orientation:'vertical'
+        size: root.width ,root.height
+        Label:
+            text: 'Tercera Pantalla'
+            font_size: 30
+        Button:
+            text:'pantalla 1'
+            font_size:30
+            on_release: 
+                app.root.current = '1'
+                root.manager.transition.direction = 'up'
